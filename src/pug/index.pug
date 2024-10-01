@@ -1,0 +1,230 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        link(rel="stylesheet", href="css/styles.css")
+        title Startup Вивчай Та Просувайся Разом З Нами
+    body 
+        include helpers/vars.pug
+        include helpers/mixins.pug
+        include helpers/sprite.pug
+
+        include components/header.pug
+
+        main 
+            section.services#services
+                .wrapper
+                    .section_about_container
+                        p.section_name Services
+                        p.about We offer ipsum dolor sit amet, consetetur sadipscing elitr amet
+
+                    .flex
+                        +servicesCard("#clean_typocgaphy", "Clean Typography", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum.")
+                        +servicesCard("#rock_solid_code", "Rock Solid Code", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum.", "services_center")
+                        +servicesCard("#expert_support", "Expert Support", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum.")
+
+            section.about_us#about_us
+                .wrapper
+                    .section_about_container
+                        p.section_name About us
+                        p.about Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+
+                    .flex
+                        .about_us_about
+                            p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod tempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos et accusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Lorem ipsum dolor sit amet. Lorem ipsum eat.
+                        .about_us_about
+                            p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirtempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos eaccusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Loreipsum dolor sit amet. Lorem ipsum dolor et.
+
+                    .slider_container
+                        button.arrow.back
+                            svg(class="icon")
+                                use(xlink:href="#arrow" class="icon")
+                        .flex.slider.about_us_slider.animate
+                            +aboutUsCard("md_khalil_uddin", "Md. Khalil Uddin", "Head of Ideas")
+                            +aboutUsCard("rubel_miah", "Rubel Miah", "Lead WordPress Developer")
+                            +aboutUsCard("shamim_mia", "Shamim Mia", "Sr. Web Developer")
+                            +aboutUsCard("john_doe", "John Doe", "Front-end Developer")
+                            +aboutUsCard("anton", "Anton", "Sr. Web Developer")
+                            +aboutUsCard("pudge", "Pudge", "Lead WordPress Developer")
+                            +aboutUsCard("void", "Void", "Head of Ideas")
+                            +aboutUsCard("pichachu", "pichachu", "Front-end Developer")
+                            +aboutUsCard("rekroll", "Rekroll", "Front-end Developer")
+                            +aboutUsCard("backend", "Troll", "Back-end Developer")
+                            +aboutUsCard("shrek", "Shrek", "Toilet master")
+                            +aboutUsCard("peater", "Peater", "web designer")
+                        button.arrow.forward
+                            svg(class="icon")
+                                use(xlink:href="#arrow" class="icon")
+
+            section.latest_works#latest_work
+                .wrapper
+                    .section_about_container
+                        p.section_name Latest Works
+                        p.taber
+                            ul.flex
+                                li
+                                    input(type="radio" name="filter" id="filter_all" checked)
+                                    label(for="filter_all") All
+                                    //- a(href="#").active 
+                                li
+                                    input(type="radio" name="filter" id="filter_branding")
+                                    label(for="filter_branding") Branding
+                                    //- a(href="#") 
+                                li
+                                    input(type="radio" name="filter" id="filter_smart")
+                                    label(for="filter_smart") Smart
+                                    //- a(href="#") 
+                                li
+                                    input(type="radio" name="filter" id="filter_paper")
+                                    label(for="filter_paper") Paper
+                                    //- a(href="#") 
+                                li
+                                    input(type="radio" name="filter" id="filter_rest")
+                                    label(for="filter_rest") Rest
+                                    //- a(href="#") 
+
+                    .gallery.gallery_all.flex.animate
+                        +galleryCard("hair_dresser", "Hair Dresser", "branding", "branding", "300")
+                        +galleryCard("secret_of_the_white_bird", "Secret Of The White Bird", "paper", "paper", "192")
+                        +galleryCard("smart", "Laptop", "smart", "smart", "563")
+                        +galleryCard("camera", "Camera", "smart", "smart", "99")
+                        +galleryCard("bike", "Bike", "branding rest", "branding rest", "321")
+                        +galleryCard("notebook", "Notebook", "paper", "paper", "3")
+                        +galleryCard("workplace", "Workplace", "smart branding", "branding, smart", "253")
+                        +galleryCard("origami", "Origami", "paper", "paper", "5")
+                        +galleryCard("event_and_entertainment", "Event And Entertainment", "rest", "rest", "100")
+
+            section.banner
+                .about
+                    p Do you like OUR WORK so far? Let's talk about YOUR PROJECT!
+                    a(href="#contact") Get in Touch
+
+            section.recent_blog_posts#blog
+                .wrapper
+                    .section_about_container
+                        p.section_name Recent blog posts
+                        p.about Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+                    
+                    //- .blog_popup_ideas
+                    //-     .popup_container
+                    //-         .img
+                    //-             img(src="img/startup_ideas.jpg")
+                    //-         .about
+                    //-             .date_and_name.flex
+                    //-                 .date
+                    //-                     p <span class="number">18</span> <span class="month">Oct</span>
+                    //-                 .flex                                    
+                    //-                     .name Startup ideas needs to be funded 
+                    //-                     .developers By <span>Khalil</span> Uddin in <span>Development</span>
+                    //-             p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quib&am ex cumque recusandae, repellendus reiciendis est sint in expedita nobis repellat rerum quod blanditiis animi nisi. Necessitatibus enim voluptatem atque eligendi est perferendis omnis repudiandae? Sequi debitis animi ea reiciendis eveniet neque aspernatur, harum rem fugit in iusto consequatur, mollitia, ipsam eligendi quod accusantium? Tempora, itaque inventore! Veritatis eligendi atque magni illo saepe harum fuga error laboriosam architecto illum, ab eum vitae quo, eos molestias, totam nesciunt doloremque suscipit. Iure, quia amet. Facere velit sit iure facilis quaerat nobis culpa molestias doloremque veritatis, repellat cum! Nobis eius, praesentium quam ab, dolor quisquam sint aut voluptates reprehenderit fugit eum aperiam et consequuntur eaque ipsa odio maxime illo officia animi. Eos accusamus expedita, ea cupiditate ducimus voluptate fugiat voluptates assumenda voluptatem. Beatae quasi, repellat alias iste enim eius reiciendis iusto et autem deleniti voluptatem optio atque rerum accusantium nemo eveniet dolor sunt aliquam natus laboriosam, voluptatibus maiores. Quia pariatur dolore obcaecati placeat beatae rerum eum corporis. In id voluptas repellendus natus fugiat et? Accusamus esse, a eos asperiores nobis praesentium nesciunt ex quo dolor quisquam doloremque cupiditate suscipit consequatur magni blanditiis incidunt inventore nam nulla facilis voluptatibus. Qui earum, expedita minus quasi nesciunt impedit doloribus repudiandae, dignissimos excepturi similique aut, iure vitae hic eum veritatis. Sunt ullam perspiciatis totam doloremque? Eveniet nam eum minima doloribus unde voluptatum maiores, expedita eaque modi sit ex temporibus odit pariatur ipsum necessitatibus mollitia consequatur enim assumenda earum. Eius omnis est sunt natus maiores dicta doloribus, minima, blanditiis maxime incidunt tempore mollitia quod et aliquid cumque facere vel dignissimos iusto nobis perferendis nisi. Consequatur incidunt, repudiandae cum quidem assumenda obcaecati libero repellat excepturi, ipsum officia itaque ab neque nihil qui amet veniam porro impedit laudantium tempore veritatis sunt. Placeat, quis dolore vel beatae sint necessitatibus quaerat libero nulla.
+                    .flex.blog_posts
+                        .blog_post.flex
+                            .img_container.animate
+                                img(src="img/startup_ideas.jpg", alt="")
+                            .about.flex.animate
+                                .date_and_name.flex
+                                    .date
+                                        p <span class="number">18</span> <span class="month">Oct</span>
+                                    .flex                                    
+                                        .name Startup ideas needs to be funded 
+                                        .developers By <span>Khalil</span> Uddin in <span>Development</span>
+
+                                .description
+                                    p.text_ideas Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam 
+                                    p.full_text_ideas Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sapiente maxime quis fugiat ea placeat repudiandae commodi facere eum, accusantium neque aperiam quos, laboriosam ipsam pariatur, sequi distinctio voluptate praesentium nisi? Culpa voluptate quis illo eum voluptates quas molestiae obcaecati, minima reprehenderit error debitis qui, ab distinctio perferendis impedit vero? Eaque aliquid asperiores neque alias laborum nulla! Ullam, deserunt dolores?
+                                    a(href="#").recent_ideas.recent_ideas_button Read more
+                                
+                        hr
+
+                        .blog_post.flex
+                            .img_container.animate
+                                img(src="img/user_interface.jpg", alt="")
+                            .about.flex.animate
+                                .date_and_name.flex
+                                    .date
+                                        p <span class="number">18</span> <span class="month">Oct</span>
+                                    .flex
+                                        .name User Interface Designing Elements 
+                                        .developers By <span>Khalil</span> Uddin in <span>Development</span>
+
+                                .description
+                                    p.text_interface Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam 
+                                    p.full_text_interface Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sapiente maxime quis fugiat ea placeat repudiandae commodi facere eum, accusantium neque aperiam quos, laboriosam ipsam pariatur, sequi distinctio voluptate praesentium nisi? Culpa voluptate quis illo eum voluptates quas molestiae obcaecati, minima reprehenderit error debitis qui, ab distinctio perferendis impedit vero? Eaque aliquid asperiores
+                                    a(href="#").recent_interface.recent_interface_button Read more
+
+            section.quotes_section#clients
+                .wrapper 
+                    .source
+                        .slider-pack.flex
+                            img(src="img/deorham.png")
+                            img(src="img/ratings.png")
+                            img(src="img/malik_media.png")
+                            img(src="img/bcause.png")
+                            img(src="img/wompily.png")
+                        .slider-pack.flex
+                            img(src="img/deorham.png")
+                            img(src="img/ratings.png")
+                            img(src="img/malik_media.png")
+                            img(src="img/bcause.png")
+                            img(src="img/wompily.png")
+
+                    .quotes_container.slider_quote
+                        .slider.slides_quote_container.animate
+                            div.active
+                                p.quotes "Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quib&am et aut officiis debitis aut rerum”
+                                p.authors John Doe, Google Inc.
+                            div
+                                p.quotes "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.”
+                                p.authors Jane Smith, Tech Inc.
+                            div
+                                p.quotes "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”
+                                p.authors Emma Wilson, Marketing Ltd.
+                        .slider_link
+                            
+
+            section.get_in_touch#contact
+                .section_about_container
+                    p.section_name Get in touch
+                    p.about Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+                
+                .wrapper.flex
+                    .contact_container
+                        .address.contact_icon
+                            p.contact_name Address
+                            p.contact 312, 7th Ave, New York
+                            p.contact NY 101200, United States of America
+                        .hotline.contact_icon
+                            p.contact_name Hotline (24x7)
+                            p.contact +65 0052 300 , +65 88251 210
+                            p.contact +88 01723 511 340
+                        .e-mail.contact_icon
+                            p.contact_name E-mail
+                            p.contact shapedtheme@gmail.com
+                            p.contact khalilkode@gmail.com
+                            
+                    .form_container
+                        form(action="php/index.php", method="post").footer_form
+                            .accept_form 
+                                p.accept_text you want to send message
+                                .flex
+                                    button(type="submit").ok ok
+                                    button(type="button" onclick="form_active()").cancel cancel
+                            .inputs
+                                input(type="text", placeholder="Your contact").input_contact
+                                input(type="text", placeholder="Your e-mail").input_email
+                                input(type="text", placeholder="Your subject").input_subject
+                                input(type="text", placeholder="Company name").input_company_name
+
+                            textarea(placeholder="Write your message").textarea_message
+                            .submit_container
+                                button(type="button").accept_button Send message
+                                p <span>*</span> We’ll contact you as as possible. We don’t reply on Monday.
+
+        include components/footer.pug
+
+        script(src="js/scripts.js")

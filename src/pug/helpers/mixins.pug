@@ -1,0 +1,37 @@
+mixin servicesCard(svg, title, about, center="")
+  .servicesCard.animate
+    .svg(class=center)
+      svg(class="icon")
+        use(xlink:href=svg class="icon")
+    div.sarvecesCardTitleContainer
+      p.title.servicesSvgTitle #{title}
+      p.about #{about}
+
+mixin aboutUsCard(img, name, work)
+  .people
+    .people_img(style=`background: url('img/${img}.jpg')`)
+      .people_soc
+        a(href="#")
+          svg(class="icon")
+            use(xlink:href="#facebook" class="icon")
+        a(href="#")
+          svg(class="icon")
+            use(xlink:href="#twitter" class="icon")
+        a(href="#")
+          svg(class="icon")
+            use(xlink:href="#google-plus" class="icon")
+        a(href="#")
+          svg(class="icon")
+            use(xlink:href="#linkedin" class="icon")
+    p.name #{name}
+    p.work #{work}
+
+mixin galleryCard(img, name, className, filter, price)
+  .galleryCard(class=className, style=`background: url('img/gallery/${img}.jpg')`).flex
+    .galleryCardAbout
+      h2.name #{name}
+      p.filter #{filter}
+      p.price #{price}$
+      a(href="javascript:void(0)" onclick=`addToCart('${name}', '${price}', '${img}', this)`).view Add to card
+        svg.icon
+          use(xlink:href="#arrow")

@@ -1,0 +1,63 @@
+.alert
+  <svg class="icon error">
+      <use xlink:href="#error"></use>
+  </svg>
+  div
+      p.errorText Lorem ipsum dolor sit amet consectetur.
+      .timeLine
+
+header#header
+  form(action="php/index.php" method="post").basket
+    button(type="button").basket_cancel +
+    h2 basket
+    //- p.null_item А що ти тут шукаєш?
+    .products#cartItems
+    .summary
+      <p>Загальна ціна: <span id="totalPrice">0</span>$</p>
+      button(type="submit").send-cart buy everything
+
+
+  .wrapper.header_wrapper
+    nav
+      .menu_container
+        a(href="/")
+          img(src="img/logo.png", alt="Startup Logo")
+        .burger-menu-button
+          span 
+          span 
+          span 
+        ul.menu
+
+          li
+            a(href="#header") Home
+          li
+            a(href="#services") Services
+          li
+            a(href="#about_us") About
+          li
+            a(href="#latest_work") Works
+          li
+            a(href="#blog") Blog
+          li
+            a(href="#clients") Clients
+          li
+            a(href="#contact") Contact
+          li
+            button.card-button
+              <svg class="icon"><use xlink:href="#basket"></use></svg> 
+
+    .header_title
+      h1 Welcome to STARTUP
+      p Your Favourite Creative Agency Template
+      a(href="javascript:void(0)").get_started Get Started
+
+    form(action="php/index.php" method="POST").login_popup
+      button(type="button").cancel x
+      p.login_text <span>log in</span> your acount
+      .flex
+        p 
+          input(type="text", placeholder="name", name="name", class="text").log_in_name
+        p
+          input(type="password", placeholder="password" class="text").logInPassword
+
+      button(type="button").log_in_button log in
